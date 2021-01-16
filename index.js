@@ -31,6 +31,7 @@ module.exports = {
         '@typescript-eslint/no-base-to-string': 'off',
         '@typescript-eslint/no-empty-interface': 0,
         '@typescript-eslint/no-extra-parens': [ 'error', 'all', { ignoreJSX: 'multi-line' } ],
+        '@typescript-eslint/no-extraneous-class': 'off',
         '@typescript-eslint/no-implicit-any-catch': 'off',
         '@typescript-eslint/no-inferrable-types': 0,
         '@typescript-eslint/no-magic-numbers': [ 'error', { ignore: [ 0, 1 ] } ],

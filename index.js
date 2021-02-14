@@ -34,7 +34,7 @@ module.exports = {
         '@typescript-eslint/no-extraneous-class': 'off',
         '@typescript-eslint/no-implicit-any-catch': 'off',
         '@typescript-eslint/no-inferrable-types': 0,
-        '@typescript-eslint/no-magic-numbers': [ 'error', { ignore: [ 0, 1 ] } ],
+        '@typescript-eslint/no-magic-numbers': [ 'error', { ignore: [ -1, 0, 1, 10 ] } ],
         '@typescript-eslint/no-non-null-assertion': 'off',
         '@typescript-eslint/no-parameter-properties': 'off',
         '@typescript-eslint/no-type-alias': [ 'error', { allowAliases: 'in-unions-and-intersections' } ],

@@ -70,6 +70,7 @@ module.exports = {
         'lines-around-comment': [ 'error', { allowBlockStart: true } ],
         'lines-between-class-members': 0,
         'max-len': [ 'error', { code: 160 } ],
+        'max-lines': 0,
         'max-lines-per-function': 0,
         'max-params': 0,
         'max-statements': 'off',

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-magic-numbers */
 module.exports = {
     env: {
         es6: true,
@@ -25,7 +26,6 @@ module.exports = {
         // TypeScript
         '@typescript-eslint/ban-types': 0,
         '@typescript-eslint/default-param-last': 0,
-        // eslint-disable-next-line @typescript-eslint/no-magic-numbers
         '@typescript-eslint/indent': [ 'error', 4 ],
         '@typescript-eslint/init-declarations': 'off',
         '@typescript-eslint/no-base-to-string': 'off',
@@ -34,7 +34,7 @@ module.exports = {
         '@typescript-eslint/no-extraneous-class': 'off',
         '@typescript-eslint/no-implicit-any-catch': 'off',
         '@typescript-eslint/no-inferrable-types': 0,
-        '@typescript-eslint/no-magic-numbers': [ 'error', { ignore: [ -1, 0, 1, 10 ] } ],
+        '@typescript-eslint/no-magic-numbers': [ 'error', { ignore: [ -1, 0, 1, 10, 100, 1000 ], ignoreArrayIndexes: true } ],
         '@typescript-eslint/no-non-null-assertion': 'off',
         '@typescript-eslint/no-parameter-properties': 'off',
         '@typescript-eslint/no-type-alias': [ 'error', { allowAliases: 'in-unions-and-intersections' } ],

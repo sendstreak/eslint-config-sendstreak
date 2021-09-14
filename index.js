@@ -64,6 +64,11 @@ module.exports = {
         'function-paren-newline': [ 'error', 'consistent' ],
         'id-length': 0,
         'import/no-duplicates': [ 'error' ],
+        'import/order': [ 'error', {
+            alphabetize: { order: 'asc' },
+            groups: [ [ 'builtin', 'external' ], [ 'internal', 'sibling', 'parent', 'index', 'object' ] ],
+            'newlines-between': 'always'
+        } ],
         indent: 0,
         'init-declarations': 'off',
         'jsx-quotes': [ 'error', 'prefer-single' ],
@@ -98,5 +103,15 @@ module.exports = {
         semi: 0,
         'sort-imports': 0,
         'space-before-function-paren': 0
+    },
+    settings: {
+        'import/parsers': {
+            '@typescript-eslint/parser': [ '.ts', '.tsx' ]
+        },
+        'import/resolver': {
+            typescript: {
+                alwaysTryTypes: true
+            }
+        }
     }
 };

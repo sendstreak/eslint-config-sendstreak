@@ -63,7 +63,7 @@ module.exports = {
         'function-call-argument-newline': [ 'error', 'consistent' ],
         'function-paren-newline': [ 'error', 'consistent' ],
         'id-length': 0,
-        'import/no-duplicates': [ 'error' ],
+        'import/no-duplicates': 'off',
         'import/order': [ 'error', {
             alphabetize: { order: 'asc' },
             groups: [ [ 'builtin', 'external' ], [ 'internal', 'sibling', 'parent', 'index', 'object' ] ],

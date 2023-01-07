@@ -84,6 +84,7 @@ module.exports = {
         'multiline-ternary': [ 'error', 'always-multiline' ],
         'new-cap': [ 'error', { capIsNew: false } ],
         'no-duplicate-imports': 0,
+        'no-extra-parens': 'off',
         'no-magic-numbers': 0,
         'no-ternary': 0,
         'no-undef-init': 0,

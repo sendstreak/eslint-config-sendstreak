@@ -31,7 +31,7 @@ module.exports = {
         '@typescript-eslint/lines-between-class-members': [ 'error', 'always', { exceptAfterSingleLine: true } ],
         '@typescript-eslint/no-base-to-string': 'off',
         '@typescript-eslint/no-empty-interface': 'off',
-        '@typescript-eslint/no-extra-parens': [ 'error', 'all', { ignoreJSX: 'multi-line' } ],
+        '@typescript-eslint/no-extra-parens': [ 'error', 'all', { ignoreJSX: 'multi-line', nestedBinaryExpressions: false } ],
         '@typescript-eslint/no-extraneous-class': 'off',
         '@typescript-eslint/no-implicit-any-catch': 'off',
         '@typescript-eslint/no-inferrable-types': 'off',

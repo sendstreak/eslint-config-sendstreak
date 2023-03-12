@@ -93,6 +93,7 @@ module.exports = {
         'no-unused-expressions': [ 'error', { allowShortCircuit: true } ],
         'no-unused-vars': 'off',
         'no-void': 'off',
+        'no-warning-comments': 'warn',
         'object-curly-newline': [ 'error', { consistent: true } ],
         'object-curly-spacing': 'off',
         'object-property-newline': 'off',

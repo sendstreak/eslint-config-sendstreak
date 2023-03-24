@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-magic-numbers */
+/* eslint-disable @typescript-eslint/no-magic-numbers, @typescript-eslint/naming-convention */
 module.exports = {
     env: {
         es6: true,

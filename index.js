@@ -38,7 +38,7 @@ module.exports = {
         '@typescript-eslint/no-magic-numbers': 'off',
         '@typescript-eslint/no-non-null-assertion': 'off',
         '@typescript-eslint/no-parameter-properties': 'off',
-        '@typescript-eslint/no-type-alias': [ 'error', { allowAliases: 'in-unions-and-intersections' } ],
+        '@typescript-eslint/no-type-alias': 'off',
         '@typescript-eslint/no-unused-vars': [ 'error', { ignoreRestSiblings: true } ],
         '@typescript-eslint/no-unused-vars-experimental': 'off',
         '@typescript-eslint/object-curly-spacing': [ 'error', 'always' ],

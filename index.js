@@ -43,6 +43,7 @@ module.exports = {
         '@typescript-eslint/no-unused-vars': [ 'error', { ignoreRestSiblings: true } ],
         '@typescript-eslint/no-unused-vars-experimental': 'off',
         '@typescript-eslint/object-curly-spacing': [ 'error', 'always' ],
+        '@typescript-eslint/parameter-properties': 'off',
         '@typescript-eslint/prefer-readonly-parameter-types': 'off',
         '@typescript-eslint/promise-function-async': 'off',
         '@typescript-eslint/quotes': [ 'error', 'single' ],

@@ -2,33 +2,34 @@
   "author": "sendstreak.com",
   "description": "Linter rules for SendStreak projects",
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "5.56.0",
-    "@typescript-eslint/parser": "5.56.0",
-    "eslint": "8.37.0",
-    "eslint-config-standard": "17.0.0",
-    "eslint-import-resolver-typescript": "3.5.3",
-    "eslint-plugin-import": "2.27.5",
-    "eslint-plugin-n": "15.6.1",
-    "eslint-plugin-promise": "6.1.1",
-    "typescript": "5.0.3"
+    "@typescript-eslint/eslint-plugin": "8.46.4",
+    "@typescript-eslint/parser": "8.46.4",
+    "eslint": "9.39.1",
+    "eslint-import-resolver-typescript": "4.4.4",
+    "eslint-plugin-import": "2.32.0",
+    "eslint-plugin-n": "15.7.0",
+    "eslint-plugin-promise": "6.6.0",
+    "typescript": "5.9.3"
   },
   "license": "UNLICENSED",
   "main": "index.js",
   "name": "eslint-config-sendstreak",
   "peerDependencies": {
-    "@typescript-eslint/eslint-plugin": "5.56.0",
-    "@typescript-eslint/parser": "5.56.0",
-    "eslint": "8.37.0",
-    "eslint-config-standard": "17.0.0",
-    "eslint-import-resolver-typescript": "3.5.3",
-    "eslint-plugin-import": "2.27.5",
-    "eslint-plugin-n": "15.6.1",
-    "eslint-plugin-promise": "6.1.1",
-    "typescript": "5.0.3"
+    "@typescript-eslint/eslint-plugin": "^8.46.4",
+    "@typescript-eslint/parser": "^8.46.4",
+    "eslint": "^9.39.1",
+    "eslint-import-resolver-typescript": "^4.4.4",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-n": "^15.7.0",
+    "eslint-plugin-promise": "^6.6.0",
+    "typescript": "^5.9.3"
   },
   "private": true,
   "scripts": {
     "test": "eslint -c index.js ."
   },
-  "version": "1.0.0"
+  "version": "1.1.0",
+  "dependencies": {
+    "@eslint/js": "9.39.1"
+  }
 }

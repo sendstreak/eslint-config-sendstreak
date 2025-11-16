@@ -1,57 +1,72 @@
-/* eslint-disable @typescript-eslint/no-magic-numbers, @typescript-eslint/naming-convention */
+const js = require("@eslint/js");
+const parser = require('@typescript-eslint/parser');
+const globals = require('globals');
+
 module.exports = {
-    env: {
-        es6: true,
-        node: true
-    },
-    extends: [
-        'eslint:all',
-        'plugin:@typescript-eslint/all'
-    ],
-    parser: '@typescript-eslint/parser',
-    parserOptions: {
-        ecmaFeatures: {
-            impliedStrict: true,
-            jsx: true
+    ...js.configs.all,
+    files: ['**/*.ts', '**/*.tsx'],
+    ignores: [ '*.js', '**/*.d.ts', 'node_modules' ],
+    languageOptions: {
+        globals: {
+            ...globals.node,
+            ...globals.browser
         },
-        ecmaVersion: 11,
-        project: './tsconfig.json'
+        parser,
+        parserOptions: {
+            ecmaFeatures: {
+                impliedStrict: true,
+                jsx: true
+            },
+            ecmaVersion: 11
+        }
     },
-    plugins: [
-        '@typescript-eslint',
-        'import'
-    ],
-    root: true,
+    plugins: {
+        '@typescript-eslint': {
+            rules: {
+                '@typescript-eslint/ban-types': 'off',
+                '@typescript-eslint/default-param-last': 'off',
+                '@typescript-eslint/indent': [ 'error', 4 ],
+                '@typescript-eslint/init-declarations': 'off',
+                '@typescript-eslint/lines-around-comment': [ 'error', { allowBlockStart: true } ],
+                '@typescript-eslint/lines-between-class-members': [ 'error', 'always', { exceptAfterSingleLine: true } ],
+                '@typescript-eslint/no-base-to-string': 'off',
+                '@typescript-eslint/no-empty-interface': 'off',
+                '@typescript-eslint/no-extra-parens': [ 'error', 'all', { ignoreJSX: 'multi-line', nestedBinaryExpressions: false } ],
+                '@typescript-eslint/no-extraneous-class': 'off',
+                '@typescript-eslint/no-implicit-any-catch': 'off',
+                '@typescript-eslint/no-inferrable-types': 'off',
+                '@typescript-eslint/no-magic-numbers': 'off',
+                '@typescript-eslint/no-non-null-assertion': 'off',
+                '@typescript-eslint/no-parameter-properties': 'off',
+                '@typescript-eslint/no-type-alias': 'off',
+                '@typescript-eslint/no-unused-vars': [ 'error', { ignoreRestSiblings: true } ],
+                '@typescript-eslint/no-unused-vars-experimental': 'off',
+                '@typescript-eslint/object-curly-spacing': [ 'error', 'always' ],
+                '@typescript-eslint/parameter-properties': 'off',
+                '@typescript-eslint/prefer-readonly-parameter-types': 'off',
+                '@typescript-eslint/promise-function-async': 'off',
+                '@typescript-eslint/quotes': [ 'error', 'single' ],
+                '@typescript-eslint/restrict-template-expressions': 'off',
+                '@typescript-eslint/semi': [ 'error' ],
+                '@typescript-eslint/space-before-function-paren': [ 'error', 'never' ],
+                '@typescript-eslint/strict-boolean-expressions': [ 'error', { allowNullableString: true } ],
+                '@typescript-eslint/unbound-method': 'off'
+            }
+        },
+        'import': {
+            rules: {
+                'import/no-duplicates': 'off',
+                'import/order': [ 'error', {
+                    alphabetize: { order: 'asc' },
+                    groups: [ [ 'builtin', 'external' ], [ 'internal', 'sibling', 'parent', 'index', 'object' ] ],
+                    'newlines-between': 'always'
+                } ]
+            }
+        }
+    },
     rules: {
         // TypeScript
-        '@typescript-eslint/ban-types': 'off',
-        '@typescript-eslint/default-param-last': 'off',
-        '@typescript-eslint/indent': [ 'error', 4 ],
-        '@typescript-eslint/init-declarations': 'off',
-        '@typescript-eslint/lines-around-comment': [ 'error', { allowBlockStart: true } ],
-        '@typescript-eslint/lines-between-class-members': [ 'error', 'always', { exceptAfterSingleLine: true } ],
-        '@typescript-eslint/no-base-to-string': 'off',
-        '@typescript-eslint/no-empty-interface': 'off',
-        '@typescript-eslint/no-extra-parens': [ 'error', 'all', { ignoreJSX: 'multi-line', nestedBinaryExpressions: false } ],
-        '@typescript-eslint/no-extraneous-class': 'off',
-        '@typescript-eslint/no-implicit-any-catch': 'off',
-        '@typescript-eslint/no-inferrable-types': 'off',
-        '@typescript-eslint/no-magic-numbers': 'off',
-        '@typescript-eslint/no-non-null-assertion': 'off',
-        '@typescript-eslint/no-parameter-properties': 'off',
-        '@typescript-eslint/no-type-alias': 'off',
-        '@typescript-eslint/no-unused-vars': [ 'error', { ignoreRestSiblings: true } ],
-        '@typescript-eslint/no-unused-vars-experimental': 'off',
-        '@typescript-eslint/object-curly-spacing': [ 'error', 'always' ],
-        '@typescript-eslint/parameter-properties': 'off',
-        '@typescript-eslint/prefer-readonly-parameter-types': 'off',
-        '@typescript-eslint/promise-function-async': 'off',
-        '@typescript-eslint/quotes': [ 'error', 'single' ],
-        '@typescript-eslint/restrict-template-expressions': 'off',
-        '@typescript-eslint/semi': [ 'error' ],
-        '@typescript-eslint/space-before-function-paren': [ 'error', 'never' ],
-        '@typescript-eslint/strict-boolean-expressions': [ 'error', { allowNullableString: true } ],
-        '@typescript-eslint/unbound-method': 'off',
+        
 
         // Base JS
         'array-bracket-newline': [ 'error', 'consistent' ],
@@ -67,12 +82,6 @@ module.exports = {
         'function-call-argument-newline': [ 'error', 'consistent' ],
         'function-paren-newline': [ 'error', 'consistent' ],
         'id-length': 'off',
-        'import/no-duplicates': 'off',
-        'import/order': [ 'error', {
-            alphabetize: { order: 'asc' },
-            groups: [ [ 'builtin', 'external' ], [ 'internal', 'sibling', 'parent', 'index', 'object' ] ],
-            'newlines-between': 'always'
-        } ],
         indent: 'off',
         'init-declarations': 'off',
         'jsx-quotes': [ 'error', 'prefer-single' ],
@@ -102,7 +111,6 @@ module.exports = {
         'one-var': [ 'error', 'never' ],
         'operator-linebreak': [ 'error', 'before' ],
         'padded-blocks': [ 'error', 'never' ],
-        // eslint-disable-next-line @typescript-eslint/naming-convention
         'prefer-destructuring': [ 'error', { AssignmentExpression: { array: false } } ],
         'quote-props': [ 'error', 'as-needed' ],
         'require-atomic-updates': 'off',

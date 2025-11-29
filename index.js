@@ -2,6 +2,7 @@ const js = require("@eslint/js");
 const parser = require('@typescript-eslint/parser');
 const typescriptEslint = require('@typescript-eslint/eslint-plugin');
 const importPlugin = require('eslint-plugin-import');
+const stylisticPlugin = require('@stylistic/eslint-plugin');
 const globals = require('globals');
 
 module.exports = {
@@ -25,18 +26,25 @@ module.exports = {
     },
     plugins: {
         '@typescript-eslint': typescriptEslint,
-        'import': importPlugin
+        'import': importPlugin,
+        '@stylistic': stylisticPlugin
     },
     rules: {
         // TypeScript - only rules that still exist in v8
-        '@typescript-eslint/ban-types': 'off',
         '@typescript-eslint/default-param-last': 'off',
-        '@typescript-eslint/no-empty-interface': 'off',
+        '@typescript-eslint/init-declarations': 'off',
+        '@typescript-eslint/no-base-to-string': 'off',
+        '@typescript-eslint/no-empty-object-type': 'off',
         '@typescript-eslint/no-extraneous-class': 'off',
         '@typescript-eslint/no-inferrable-types': 'off',
+        '@typescript-eslint/no-magic-numbers': 'off',
         '@typescript-eslint/no-non-null-assertion': 'off',
+        '@typescript-eslint/no-type-alias': 'off',
+        '@typescript-eslint/no-unsafe-function-type': 'off',
         '@typescript-eslint/no-unused-vars': [ 'error', { ignoreRestSiblings: true } ],
+        '@typescript-eslint/no-wrapper-object-types': 'off',
         '@typescript-eslint/prefer-readonly-parameter-types': 'off',
+        '@typescript-eslint/restrict-template-expressions': 'off',
         '@typescript-eslint/strict-boolean-expressions': [ 'error', { allowNullableString: true } ],
         '@typescript-eslint/unbound-method': 'off',
 
@@ -62,7 +70,7 @@ module.exports = {
         'function-call-argument-newline': [ 'error', 'consistent' ],
         'function-paren-newline': [ 'error', 'consistent' ],
         'id-length': 'off',
-        indent: [ 'error', 4 ],  // Enabled - replaces @typescript-eslint/indent
+        indent: [ 'error', 4, { SwitchCase: 1 } ],  // Enabled - replaces @typescript-eslint/indent
         'init-declarations': 'off',
         'jsx-quotes': [ 'error', 'prefer-single' ],
         'lines-around-comment': [ 'error', { allowBlockStart: true } ],  // Enabled - replaces @typescript-eslint/lines-around-comment
@@ -93,10 +101,14 @@ module.exports = {
         'padded-blocks': [ 'error', 'never' ],
         'prefer-destructuring': [ 'error', { AssignmentExpression: { array: false } } ],
         'quote-props': [ 'error', 'as-needed' ],
-        quotes: [ 'error', 'single' ],  // Enabled - replaces @typescript-eslint/quotes
+        quotes: 'off',  // Disabled in favor of @stylistic/quotes
         'require-atomic-updates': 'off',
-        semi: [ 'error' ],  // Enabled - replaces @typescript-eslint/semi
+        semi: 'off',  // Disabled in favor of @stylistic/semi
         'sort-imports': 'off',
+
+        // Stylistic rules - proper TypeScript support
+        '@stylistic/quotes': [ 'error', 'single' ],
+        '@stylistic/semi': [ 'error', 'always' ],
         'space-before-function-paren': [ 'error', 'never' ]  // Enabled - replaces @typescript-eslint/space-before-function-paren
     },
     settings: {

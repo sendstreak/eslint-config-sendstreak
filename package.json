@@ -2,6 +2,7 @@
   "author": "sendstreak.com",
   "description": "Linter rules for SendStreak projects",
   "devDependencies": {
+    "@stylistic/eslint-plugin": "5.6.1",
     "@typescript-eslint/eslint-plugin": "8.46.4",
     "@typescript-eslint/parser": "8.46.4",
     "eslint": "9.39.1",
@@ -15,6 +16,7 @@
   "main": "index.js",
   "name": "eslint-config-sendstreak",
   "peerDependencies": {
+    "@stylistic/eslint-plugin": "^5.6.1",
     "@typescript-eslint/eslint-plugin": "^8.46.4",
     "@typescript-eslint/parser": "^8.46.4",
     "eslint": "^9.39.1",

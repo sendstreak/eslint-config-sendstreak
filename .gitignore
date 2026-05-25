@@ -1,2 +1,7 @@
 node_modules
 build
+
+# AI agent files — internal only
+CLAUDE.md
+.claude/
+.DS_Store
